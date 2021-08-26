@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="details.css" />
+        <script src="script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <title>test</title>
+    </head>
+
+    <body>
+        <nav>
+            <span id="nav-logo">Where in the world?</span>
+            <a id="nav-mode-button"
+                ><span class="material-icons" id="nav-mode-logo">
+                    nightlight_round </span
+                >Dark Mode</a
+            >
+        </nav>
+        <main class="" id="main-page">
+            <section id="inputs">
+                <div id="search-container">
+                    <button id="search-button">
+                        <span class="material-icons" id="search-icon">
+                            search
+                        </span>
+                    </button>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search for a country..."
+                    />
+                </div>
+                <div id="filters-container">
+                    <div id="filters-button">
+                        Filter by Region<span
+                            class="material-icons"
+                            id="filters-icon"
+                        >
+                            expand_more
+                        </span>
+                    </div>
+                    <div id="filters-dropdown">
+                        <div class="filters-items" onclick="filter('Africa')">
+                            Africa
+                        </div>
+                        <div class="filters-items" onclick="filter('Americas')">
+                            America
+                        </div>
+                        <div class="filters-items" onclick="filter('Asia')">
+                            Asia
+                        </div>
+                        <div class="filters-items" onclick="filter('Europe')">
+                            Europe
+                        </div>
+                        <div class="filters-items" onclick="filter('Oceania')">
+                            Oceania
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container"></div>
+        </main>
+
+        <main class="hidden" id="details-page">
+            <section id="back-section">
+                <button id="back-button">
+                    <span class="material-icons" id="back-icon">
+                        arrow_back </span
+                    >Back
+                </button>
+            </section>
+            <section id="page-section">
+                <div id="page-flag-container">
+                    <div id="page-flag"></div>
+                </div>
+                <div id="page-content">
+                    <h1 id="page-title"></h1>
+                    <div id="page-info">
+                        <div class="page-properties">
+                            <p class="page-property">
+                                Native Name:
+                                <span
+                                    class="page-property-value"
+                                    id="details-native-name"
+                                >
+                                </span>
+                            </p>
+                            <p class="page-property">
+                                Population:
+                                <span
+                                    class="page-property-value"
+                                    id="details-population"
+                                >
+                                </span>
+                            </p>
+                            <p class="page-property">
+                                Region:
+                                <span
+                                    class="page-property-value"
+                                    id="details-region"
+                                >
+                                </span>
+                            </p>
+                            <p class="page-property">
+                                Sub Region:
+                                <span
+                                    class="page-property-value"
+                                    id="details-sub-region"
+                                ></span>
+                            </p>
+                            <p class="page-property">
+                                Capital:
+                                <span
+                                    class="page-property-value"
+                                    id="details-capital"
+                                ></span>
+                            </p>
+                        </div>
+                        <div class="page-properties">
+                            <p class="page-property">
+                                Top Level Domain:
+                                <span
+                                    class="page-property-value"
+                                    id="details-domain"
+                                ></span>
+                            </p>
+                            <p class="page-property">
+                                Currencies:
+                                <span
+                                    class="page-property-value"
+                                    id="details-currency"
+                                ></span>
+                            </p>
+                            <p class="page-property">
+                                Languages:
+                                <span
+                                    class="page-property-value"
+                                    id="details-language"
+                                ></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="borders-container">
+                        <span class="page-property">Borders Countries: </span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
