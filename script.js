@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data && data.status != 404) {
                 displayed_data = data;
                 all_countries = data;
+                appendCountryCards('All');
             }
         })
-        .then(appendCountryCards)
         .catch((err) => {
             console.log(err);
         });
@@ -98,7 +98,7 @@ function fetchNewData(url) {
         .then((data) => {
             if (data && data.status != 404) {
                 displayed_data = data;
-                appendCountryCards();
+                appendCountryCards('All');
             }
         })
         .catch((err) => {
@@ -129,7 +129,7 @@ function createCountryElement(data) {
 }
 
 // displays the components of the countries in displayed_data variable
-function appendCountryCards() {
+function appendCountryCards(region) {
     if (!displayed_data) return;
     const container = document.querySelector('.container');
 
@@ -137,7 +137,12 @@ function appendCountryCards() {
     container.innerHTML = '';
 
     // display the new ones
-    displayed_data.forEach((element) => {
+    const current_display =
+        region != 'All'
+            ? displayed_data.filter((element) => element.region == region)
+            : displayed_data;
+
+    current_display.forEach((element) => {
         const countryData = {
             flag: element.flag,
             name: element.name,
@@ -161,7 +166,7 @@ function filter(region) {
     displayed_data = displayed_data.filter(
         (element) => element.region == region
     );
-    appendCountryCards();
+    // appendCountryCards();
 }
 
 // display the details page of some country when its card is clicked
@@ -212,8 +217,10 @@ function detailsPage(name) {
 
     const borders = document.querySelector('#borders-container');
 
+    console.log('borders', data.borders);
+
     // check if border countries existe
-    if (data.borders.length != 0) {
+    if (data.borders) {
         // borders label
         borders.innerHTML =
             '<span class="page-property">Borders Countries: </span>';
@@ -251,7 +258,7 @@ function searchNewCountries(name) {
     // if the input value is empty display cards from all_countries array
     if (name == '') {
         displayed_data = all_countries;
-        appendCountryCards();
+        appendCountryCards('All');
     } else {
         // fetch data for specifid name
         fetchNewData('https://restcountries.com/v2/name/' + name);
