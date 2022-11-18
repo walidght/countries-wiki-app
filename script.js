@@ -9,7 +9,7 @@ let display_mode = 'light';
 
 // fetches all the countries once the page loaded
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://restcountries.eu/rest/v2/all')
+    fetch('https://restcountries.com/v2/all')
         .then((response) => {
             return response.json();
         })
@@ -254,7 +254,7 @@ function searchNewCountries(name) {
         appendCountryCards();
     } else {
         // fetch data for specifid name
-        fetchNewData('https://restcountries.eu/rest/v2/name/' + name);
+        fetchNewData('https://restcountries.com/v2/name/' + name);
     }
 }
 
