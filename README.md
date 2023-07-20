@@ -1,3 +1,11 @@
-# Frontend Mentor - REST Countries API with color theme switcher
+# About Countries Wiki
+The concept of Countries Wiki is provided by Frontend Mentor. *Countries Wiki* is a front-end web application that leverages an API to fetch comprehensive information about various countries.
 
-![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
+# Tools Used 
+*Countries Wiki* is made using the fundamental building blocks of web development:
+
+- HTML
+- CSS
+- JavaScript
+
+In Countries Wiki, you can explore and discover all details about countries across the globe!
